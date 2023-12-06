@@ -149,24 +149,24 @@ function updateData(i){
 
 //Search
 
-let SearchMood = "title";
+let SearchMood = "Title";
 function SearchMoodBtnClick(id){
 
     let Search = document.getElementById('search');
     if(id == "searchTitle"){
-        SearchMood = "title";
+        SearchMood = "Title";
     }else {
-        SearchMood = "category";
+        SearchMood = "Category";
     }
     Search.focus();
     Search.value = '';
-    Search.placeholder = 'Search by '+ SearchMood;
+    Search.placeholder = 'Search By '+ SearchMood;
 }
 
 function searchData(value){
     let table = '';
     for(let i=0; i< dataPro.length; i++){
-        if(SearchMood == "title"){
+        if(SearchMood == "Title"){
             if(dataPro[i].title.includes(value.toLowerCase())){
                 table +=`
                 <tr>
@@ -204,5 +204,4 @@ function searchData(value){
         showData();
     }
     document.getElementById('tbody').innerHTML = table;
-    
 }
